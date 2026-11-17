@@ -1,9 +1,14 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="pt-BR"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<meta name="description" content="Mentoria para empresários locais: aumente seu faturamento com posicionamento certo, Instagram, WhatsApp e ações comerciais que vendem de verdade.">
+<link rel="preload" as="image" href="breno-limpo.webp" imagesrcset="breno-limpo-480.webp 480w, breno-limpo.webp 760w" imagesizes="(max-width: 760px) 92vw, 640px" fetchpriority="high">
+</head><body>
 <title>Mentoria Alavancagem de Vendas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"></noscript>
 <style>
 /* Direção "Placar de vendas": a página se comporta como um painel de faturamento ao vivo.
    Ticker de resultados, notificações de venda no celular, gráfico do pico da Erupção, números que contam.
@@ -1733,9 +1738,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     if(!paused && !reduce){ pos += speed; if(pos >= half) pos -= half; rail.scrollLeft = pos; }
     else { if(rail.scrollLeft >= half) rail.scrollLeft -= half; pos = rail.scrollLeft; }
     barEl.style.width = (half ? (rail.scrollLeft % half) / half * 100 : 0) + '%';
-    requestAnimationFrame(loop);
+    railRaf = railVis ? requestAnimationFrame(loop) : 0;
   }
-  requestAnimationFrame(loop);
+  /* Otimização: o carrossel só anda quando está perto da tela (fora dela, não ocupa o celular). */
+  var railVis = true, railRaf = requestAnimationFrame(loop);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ railVis = es[0].isIntersecting; if (railVis && !railRaf) railRaf = requestAnimationFrame(loop); }, { rootMargin: '200px 0px' }).observe(rail);
   rail.addEventListener('mouseenter', function(){ pause(); });
   function anyPlaying(){ return Array.prototype.some.call(rail.querySelectorAll('video'), function(o){ return !o.paused; }); }
   rail.addEventListener('mouseleave', function(){ if(!anyPlaying()) pause(800); });
@@ -2148,7 +2155,7 @@ section { padding-block: 96px; }
 (function(){
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('fora-da-tela', !e.isIntersecting); }); }, { rootMargin: '200px 0px' });
-  document.querySelectorAll('#mural, #marcas, #resultados, .ticker, #o-que-muda, #metodo, #garantia').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('body > header, body > section, body > footer, .ticker').forEach(function(el){ io.observe(el); });
 })();
 </script>
 
