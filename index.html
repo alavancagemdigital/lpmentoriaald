@@ -1,6 +1,19 @@
 <!doctype html><html lang="pt-BR"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <meta name="description" content="Mentoria para empresários locais: aumente seu faturamento com posicionamento certo, Instagram, WhatsApp e ações comerciais que vendem de verdade.">
 <link rel="preload" as="image" href="breno-limpo.webp" imagesrcset="breno-limpo-480.webp 480w, breno-limpo.webp 760w" imagesizes="(max-width: 760px) 92vw, 640px" fetchpriority="high">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1510904709990638');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1510904709990638&ev=PageView&noscript=1"/></noscript>
+<!-- Fim Meta Pixel -->
 </head><body>
 <title>Mentoria Alavancagem de Vendas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -1837,6 +1850,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     var msg = copy[intent].m + "\n\nNome: " + mv('m-nome') + "\nNegócio: " + mv('m-negocio') +
       "\nSegmento: " + mv('m-segmento') + "\nFaturamento: " + mv('m-fat');
     mForm.hidden = true; mDone.hidden = false;
+    if (window.fbq) fbq('track', intent === 'diag' ? 'Lead' : 'Contact', {
+      content_name: 'Diagnostico Mentoria ALD - popup',
+      segmento: mv('m-segmento'), faturamento: mv('m-fat')
+    });
     redirect(waUrl(msg), document.getElementById('m-wa'));
   });
 
@@ -1851,6 +1868,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       "Segmento: " + v('f-segmento') + "\nFaturamento: " + v('f-fat') +
       (v('f-desafio') ? "\nMaior desafio: " + v('f-desafio') : "");
     lead.hidden = true; done.hidden = false;
+    if (window.fbq) fbq('track', 'Lead', {
+      content_name: 'Diagnostico Mentoria ALD - form final',
+      segmento: v('f-segmento'), faturamento: v('f-fat'), cidade: v('f-cidade')
+    });
     redirect(waUrl(msg), document.getElementById('wa'));
   });
 })();
