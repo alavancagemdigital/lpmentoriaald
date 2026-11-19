@@ -1621,6 +1621,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <form class="form" id="lead" novalidate>
         <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Como você se chama?" required></div>
+        <div class="field"><label for="f-whats">Seu WhatsApp</label><input id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(37) 99999-9999" maxlength="16" required></div>
         <div class="two">
           <div class="field"><label for="f-negocio">Nome do negócio</label><input id="f-negocio" name="negocio" placeholder="Ex.: Loja Aurive" required></div>
           <div class="field"><label for="f-cidade">Cidade</label><input id="f-cidade" name="cidade" placeholder="Ex.: Divinópolis-MG" required></div>
@@ -1636,14 +1637,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             </select></div>
         </div>
         <div class="field"><label for="f-desafio">Qual o seu maior desafio hoje?</label><textarea id="f-desafio" name="desafio" placeholder="Ex.: o movimento caiu e o Instagram não traz cliente"></textarea></div>
-        <p class="err" id="err" hidden>Preencha nome, negócio, cidade, segmento e faturamento para continuar.</p>
+        <p class="err" id="err" hidden>Preencha nome, WhatsApp, negócio, cidade, segmento e faturamento para continuar.</p>
         <button class="upw-btn-marquee" type="submit" data-upw-speed="70" data-upw-sep="✦"><span class="upw-btn-marquee__label">Quero meu diagnóstico gratuito</span><span class="upw-btn-marquee__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"><path d="M4.5 12h14M12.5 5.5 19 12l-6.5 6.5"/></svg></span></button>
         <small>Seus dados são usados só para marcar o seu diagnóstico.</small>
       </form>
       <div class="form done" id="done" hidden>
         <div class="spin" aria-hidden="true"></div>
-        <h3>Abrindo o WhatsApp…</h3>
-        <p style="color:var(--muted)">Sua mensagem já vai pronta. É só tocar em enviar.</p>
+        <h3>Pronto! Recebemos seus dados.</h3>
+        <p style="color:var(--muted)">Agora é só tocar em enviar no WhatsApp para garantir o seu horário. Se o WhatsApp não abrir, fique tranquilo: nossa equipe vai te chamar no número que você informou.</p>
         <a class="btn" id="wa" href="#" target="_blank" rel="noopener">Se não abriu, toque aqui <span class="arr" aria-hidden="true">↗</span></a>
       </div>
     </div>
@@ -1664,8 +1665,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <form id="m-form" novalidate>
       <span class="eyebrow">Mentoria Alavancagem de Vendas</span>
       <h3 id="m-title">Seu diagnóstico gratuito</h3>
-      <p class="m-sub" id="m-sub">Responda 4 perguntas rápidas.</p>
+      <p class="m-sub" id="m-sub">Responda 5 perguntas rápidas.</p>
       <div class="field"><label for="m-nome">Seu nome</label><input id="m-nome" autocomplete="name" placeholder="Como você se chama?" required></div>
+      <div class="field"><label for="m-whats">Seu WhatsApp</label><input id="m-whats" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(37) 99999-9999" maxlength="16" required></div>
       <div class="field"><label for="m-negocio">Nome do negócio e cidade</label><input id="m-negocio" placeholder="Ex.: Loja Aurive, Itapecerica" required></div>
       <div class="two">
         <div class="field"><label for="m-segmento">Segmento</label>
@@ -1673,14 +1675,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="field"><label for="m-fat">Faturamento mensal</label>
           <select id="m-fat" required><option value="">Selecione</option><option>Até R$ 20 mil</option><option>R$ 20 a 50 mil</option><option>R$ 50 a 100 mil</option><option>Acima de R$ 100 mil</option></select></div>
       </div>
-      <p class="err" id="m-err" hidden>Preencha os 4 campos para continuar.</p>
+      <p class="err" id="m-err" hidden>Preencha os 5 campos para continuar.</p>
       <button class="upw-btn-marquee" type="submit" data-upw-speed="70" data-upw-sep="✦"><span class="upw-btn-marquee__label">Finalizar</span><span class="upw-btn-marquee__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"><path d="M4.5 12h14M12.5 5.5 19 12l-6.5 6.5"/></svg></span></button>
       <small class="m-note">Seus dados são usados só para o atendimento.</small>
     </form>
     <div class="m-done" id="m-done" hidden>
       <div class="spin" aria-hidden="true"></div>
-      <h3>Abrindo o WhatsApp…</h3>
-      <p class="m-sub">Sua mensagem já vai pronta. É só tocar em enviar.</p>
+      <h3>Pronto! Recebemos seus dados.</h3>
+      <p class="m-sub">Agora é só tocar em enviar no WhatsApp para garantir o seu horário. Se o WhatsApp não abrir, fique tranquilo: nossa equipe vai te chamar no número que você informou.</p>
       <a class="btn" id="m-wa" href="#" target="_blank" rel="noopener">Se não abriu, toque aqui <span class="arr" aria-hidden="true">↗</span></a>
     </div>
   </div>
@@ -1688,6 +1690,68 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <div class="sticky" id="sticky"><a class="upw-btn-marquee" href="#diagnostico" data-upw-speed="70" data-upw-sep="✦"><span class="upw-btn-marquee__label">Diagnóstico gratuito</span><span class="upw-btn-marquee__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"><path d="M4.5 12h14M12.5 5.5 19 12l-6.5 6.5"/></svg></span></a></div>
 
+<script>
+/* ===== Leads: máscara de telefone, validação, UTMs e envio para a planilha ===== */
+var SHEET_URL = "https://script.google.com/macros/s/AKfycbyalif5DcYD1sO7xA04mHLbHLT4Ks8cw4oTT2KhEIZ5CHMXlTriIvkqeSHlakf9EoMn/exec";
+function telDigits(v){
+  var d = String(v || '').replace(/\D/g, '');
+  if (d.length > 11 && d.indexOf('55') === 0) d = d.slice(2); /* +55 colado na frente */
+  return d.slice(0, 11);
+}
+function telMask(v){
+  var d = telDigits(v);
+  if (!d) return '';
+  if (d.length <= 2) return '(' + d;
+  var ddd = d.slice(0, 2), r = d.slice(2);
+  var cut = d.length === 11 ? 5 : 4;
+  return '(' + ddd + ') ' + (r.length > cut ? r.slice(0, cut) + '-' + r.slice(cut) : r);
+}
+function filled(id){
+  var el = document.getElementById(id); if (!el) return false;
+  if (el.type === 'tel') return telDigits(el.value).length >= 10;
+  return !!el.value.trim();
+}
+var LEAD_UTMS = (function(){
+  var keys = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'], out = {}, saved = {};
+  try { saved = JSON.parse(sessionStorage.getItem('ald_utms') || '{}') || {}; } catch(e){}
+  var q; try { q = new URLSearchParams(location.search); } catch(e){ q = null; }
+  var fromUrl = q && keys.some(function(k){ return q.get(k); });
+  keys.forEach(function(k){ out[k] = fromUrl ? (q.get(k) || '') : (saved[k] || ''); });
+  if (fromUrl) { try { sessionStorage.setItem('ald_utms', JSON.stringify(out)); } catch(e){} }
+  return out;
+})();
+function saveLead(data){
+  try {
+    if (!SHEET_URL || SHEET_URL.indexOf('/exec') < 0) return;
+    var u = LEAD_UTMS || {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){ if (!(k in data)) data[k] = u[k] || ''; });
+    if (!data.pagina) data.pagina = location.href;
+    var json = JSON.stringify(data), sent = false;
+    try { if (navigator.sendBeacon) sent = navigator.sendBeacon(SHEET_URL, new Blob([json], {type:'text/plain;charset=utf-8'})); } catch(e){ sent = false; }
+    if (!sent && window.fetch) {
+      fetch(SHEET_URL, {method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=utf-8'}, body: json}).catch(function(){});
+    }
+  } catch(e){}
+}
+/* colar: trata o texto inteiro antes do maxlength cortar (ex.: "+55 (37) 99999-9999") */
+document.addEventListener('paste', function(e){
+  var el = e.target;
+  if (!el || el.tagName !== 'INPUT' || el.type !== 'tel') return;
+  try {
+    var t = (e.clipboardData || window.clipboardData).getData('text');
+    if (!t) return;
+    e.preventDefault();
+    el.value = telMask(t);
+    el.dispatchEvent(new Event('input', {bubbles:true}));
+  } catch(err){}
+});
+document.addEventListener('input', function(e){
+  var el = e.target;
+  if (!el || el.tagName !== 'INPUT' || el.type !== 'tel') return;
+  var m = telMask(el.value);
+  if (el.value !== m) el.value = m;
+});
+</script>
 <script>
 (function(){
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1822,8 +1886,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       mDone = document.getElementById('m-done'), mErr = document.getElementById('m-err'),
       mTitle = document.getElementById('m-title'), mSub = document.getElementById('m-sub'), intent = 'diag', lastBtn = null;
   var copy = {
-    diag:{t:'Seu diagnóstico gratuito', s:'Responda 4 perguntas rápidas. Em seguida você vai para o WhatsApp da equipe para marcar o horário.', m:'Olá! Quero meu diagnóstico gratuito da Mentoria Alavancagem de Vendas.'},
-    info:{t:'Saber mais sobre a mentoria', s:'Responda 4 perguntas rápidas. Em seguida você vai para o WhatsApp da equipe para tirar suas dúvidas.', m:'Olá! Quero saber mais sobre a Mentoria Alavancagem de Vendas.'}
+    diag:{t:'Seu diagnóstico gratuito', s:'Responda 5 perguntas rápidas. Em seguida você vai para o WhatsApp da equipe para marcar o horário.', m:'Olá! Quero meu diagnóstico gratuito da Mentoria Alavancagem de Vendas.'},
+    info:{t:'Saber mais sobre a mentoria', s:'Responda 5 perguntas rápidas. Em seguida você vai para o WhatsApp da equipe para tirar suas dúvidas.', m:'Olá! Quero saber mais sobre a Mentoria Alavancagem de Vendas.'}
   };
   function openModal(kind, btn){
     intent = kind; lastBtn = btn;
@@ -1845,15 +1909,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   function mv(id){ return document.getElementById(id).value.trim(); }
   mForm.addEventListener('submit', function(e){
     e.preventDefault();
-    var ok = ['m-nome','m-negocio','m-segmento','m-fat'].every(function(id){ return mv(id); });
+    var ok = ['m-nome','m-whats','m-negocio','m-segmento','m-fat'].every(function(id){ return filled(id); });
     mErr.hidden = ok; if(!ok) return;
-    var msg = copy[intent].m + "\n\nNome: " + mv('m-nome') + "\nNegócio: " + mv('m-negocio') +
+    var msg = copy[intent].m + "\n\nNome: " + mv('m-nome') + "\nWhatsApp: " + mv('m-whats') + "\nNegócio: " + mv('m-negocio') +
       "\nSegmento: " + mv('m-segmento') + "\nFaturamento: " + mv('m-fat');
     mForm.hidden = true; mDone.hidden = false;
     if (window.fbq) fbq('track', intent === 'diag' ? 'Lead' : 'Contact', {
       content_name: 'Diagnostico Mentoria ALD - popup',
       segmento: mv('m-segmento'), faturamento: mv('m-fat')
     });
+    saveLead({origem: intent === 'diag' ? 'popup-diag' : 'popup-info', nome: mv('m-nome'), whatsapp: '55' + telDigits(mv('m-whats')),
+      negocio: mv('m-negocio'), cidade: '', segmento: mv('m-segmento'), faturamento: mv('m-fat'), desafio: '', pagina: location.href});
     redirect(waUrl(msg), document.getElementById('m-wa'));
   });
 
@@ -1862,9 +1928,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   function v(id){ return document.getElementById(id).value.trim(); }
   lead.addEventListener('submit', function(e){
     e.preventDefault();
-    var ok = ['f-nome','f-negocio','f-cidade','f-segmento','f-fat'].every(function(id){ return v(id); });
+    var ok = ['f-nome','f-whats','f-negocio','f-cidade','f-segmento','f-fat'].every(function(id){ return filled(id); });
     err.hidden = ok; if(!ok) return;
-    var msg = copy.diag.m + "\n\nNome: " + v('f-nome') + "\nNegócio: " + v('f-negocio') + " (" + v('f-cidade') + ")\n" +
+    var msg = copy.diag.m + "\n\nNome: " + v('f-nome') + "\nWhatsApp: " + v('f-whats') + "\nNegócio: " + v('f-negocio') + " (" + v('f-cidade') + ")\n" +
       "Segmento: " + v('f-segmento') + "\nFaturamento: " + v('f-fat') +
       (v('f-desafio') ? "\nMaior desafio: " + v('f-desafio') : "");
     lead.hidden = true; done.hidden = false;
@@ -1872,6 +1938,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       content_name: 'Diagnostico Mentoria ALD - form final',
       segmento: v('f-segmento'), faturamento: v('f-fat'), cidade: v('f-cidade')
     });
+    saveLead({origem: 'form-final', nome: v('f-nome'), whatsapp: '55' + telDigits(v('f-whats')),
+      negocio: v('f-negocio'), cidade: v('f-cidade'), segmento: v('f-segmento'), faturamento: v('f-fat'), desafio: v('f-desafio'), pagina: location.href});
     redirect(waUrl(msg), document.getElementById('wa'));
   });
 })();
@@ -1985,20 +2053,20 @@ section { padding-block: 96px; }
 <script>
 /* Validação em tempo real + barra de progresso nos dois formulários */
 (function(){
-  [['m-form',['m-nome','m-negocio','m-segmento','m-fat']],['lead',['f-nome','f-negocio','f-cidade','f-segmento','f-fat']]].forEach(function(cfg){
+  [['m-form',['m-nome','m-whats','m-negocio','m-segmento','m-fat']],['lead',['f-nome','f-whats','f-negocio','f-cidade','f-segmento','f-fat']]].forEach(function(cfg){
     var form = document.getElementById(cfg[0]); if(!form) return;
     var bar = document.createElement('div'); bar.className = 'form-progress'; bar.setAttribute('aria-hidden','true'); bar.innerHTML = '<i></i>';
     var first = form.querySelector('.field'); form.insertBefore(bar, first);
-    function upd(){ var n = cfg[1].filter(function(id){ return document.getElementById(id).value.trim(); }).length; bar.firstChild.style.width = (n / cfg[1].length * 100) + '%'; }
+    function upd(){ var n = cfg[1].filter(function(id){ return filled(id); }).length; bar.firstChild.style.width = (n / cfg[1].length * 100) + '%'; }
     cfg[1].forEach(function(id){
       var el = document.getElementById(id), lab = form.querySelector('label[for="'+id+'"]');
       if(lab && !lab.querySelector('.chk')){ var c = document.createElement('span'); c.className = 'chk'; c.textContent = '✓'; c.setAttribute('aria-hidden','true'); lab.appendChild(c); }
-      function check(strict){ var v = el.value.trim(); el.classList.toggle('ok', !!v); el.classList.toggle('bad', strict && !v); if(lab) lab.classList.toggle('okl', !!v); upd(); }
+      function check(strict){ var v = filled(id); el.classList.toggle('ok', !!v); el.classList.toggle('bad', strict && !v); if(lab) lab.classList.toggle('okl', !!v); upd(); }
       el.addEventListener('input', function(){ check(false); });
       el.addEventListener('change', function(){ check(false); });
       el.addEventListener('blur', function(){ check(true); });
     });
-    form.addEventListener('submit', function(){ cfg[1].forEach(function(id){ var el = document.getElementById(id); if(!el.value.trim()) el.classList.add('bad'); }); }, true);
+    form.addEventListener('submit', function(){ cfg[1].forEach(function(id){ var el = document.getElementById(id); if(!filled(id)) el.classList.add('bad'); }); }, true);
   });
 })();
 </script>
